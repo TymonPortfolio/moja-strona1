@@ -1,96 +1,230 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pizzeria Bella Napoli</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0; padding: 0;
-      background: #fff8f0;
-      color: #333;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pizzeria Gdańsk | Najlepsza pizza w mieście</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #1e1e1e;
+    color: #fff;
+  }
+  header {
+    background: #c62828;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+  }
+  nav {
+    margin-top: 15px;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #ffb300;
+  }
+  .slider {
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+  }
+  .slides {
+    display: flex;
+    width: 300%;
+    animation: slideAnim 15s infinite;
+  }
+  .slides img {
+    width: 100%;
+    object-fit: cover;
+  }
+  @keyframes slideAnim {
+    0% { transform: translateX(0);}
+    33% { transform: translateX(-100%);}
+    66% { transform: translateX(-200%);}
+    100% { transform: translateX(0);}
+  }
+  .content {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #ffb300;
+    letter-spacing: 2px;
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 25px;
+  }
+  .menu-item {
+    background: #2b2b2b;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease;
+  }
+  .menu-item:hover {
+    transform: scale(1.05);
+  }
+  .menu-item h3 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+  }
+  .menu-item p {
+    font-size: 0.9em;
+    line-height: 1.3;
+  }
+  .price {
+    margin-top: 8px;
+    font-weight: 700;
+    color: #ffb300;
+    font-size: 1.2em;
+  }
+  .buttons {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .btn {
+    background: #ffb300;
+    color: #1e1e1e;
+    padding: 15px 35px;
+    margin: 0 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1.1em;
+  }
+  .btn:hover {
+    background: #c67c00;
+  }
+  .about {
+    background: #c62828;
+    color: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.8);
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #111;
+    font-size: 0.9em;
+    color: #777;
+  }
+  iframe {
+    display: block;
+    margin: 30px auto 50px auto;
+    border: 0;
+    width: 90%;
+    max-width: 600px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+  }
+  @media(max-width: 600px){
     header {
-      background: #d1321b;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      font-size: 1.8em;
     }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+    .btn {
+      padding: 12px 25px;
+      margin: 10px 10px;
+      font-size: 1em;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1 {
-      margin-top: 0;
-    }
-    .menu-item {
-      border-bottom: 1px solid #d1321b;
-      padding: 10px 0;
-    }
-    footer {
-      text-align: center;
-      background: #d1321b;
-      color: white;
-      padding: 10px;
-      margin-top: 30px;
-    }
-    @media(max-width:600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Pizzeria Bella Napoli</h1>
-    <nav>
-      <a href="#menu">Menu</a>
-      <a href="#about">O nas</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-  </header>
-  <main>
-    <section id="menu">
-      <h2>Nasze Menu</h2>
-      <div class="menu-item">
-        <h3>Margherita</h3>
-        <p>Klasyczna pizza z sosem pomidorowym, mozzarellą i bazylią.</p>
-      </div>
-      <div class="menu-item">
-        <h3>Capricciosa</h3>
-        <p>Sos pomidorowy, mozzarella, szynka, pieczarki, oliwki.</p>
-      </div>
-      <div class="menu-item">
-        <h3>Diavola</h3>
-        <p>Pikantna salami, ser mozzarella, ostra papryka.</p>
-      </div>
-    </section>
-    <section id="about">
-      <h2>O nas</h2>
-      <p>Jesteśmy rodzinną pizzerią z tradycjami, serwującą najlepsze włoskie pizze w Kołobrzegu od 1998 roku.</p>
-    </section>
-    <section id="contact">
-      <h2>Kontakt</h2>
-      <p>Telefon: 123-456-789</p>
-      <p>Email: kontakt@bellanapoli.pl</p>
-      <p>Adres: ul. Smaczna 12, Kołobrzeg</p>
-    </section>
-  </main>
-  <footer>
-    &copy; 2025 Pizzeria Bella Napoli
-  </footer>
+
+<header>
+  Pizzeria Gdańsk  
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#about">O nas</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<section class="slider">
+  <div class="slides">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1350&q=80" alt="Pizza Margherita" />
+    <img src="https://images.unsplash.com/photo-1601924638867-3d7a157a87f8?auto=format&fit=crop&w=1350&q=80" alt="Pizza Pepperoni" />
+    <img src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f60?auto=format&fit=crop&w=1350&q=80" alt="Pizza z warzywami" />
+  </div>
+</section>
+
+<div class="content">
+
+  <h2 class="section-title" id="menu">Nasze Menu</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <h3>Pizza Margherita</h3>
+      <p>Klasyczna włoska pizza z sosem pomidorowym, mozzarellą i świeżą bazylią.</p>
+      <div class="price">25 zł</div>
+    </div>
+    <div class="menu-item">
+      <h3>Pizza Pepperoni</h3>
+      <p>Ostra pizza z pepperoni, serem mozzarella i oregano.</p>
+      <div class="price">30 zł</div>
+    </div>
+    <div class="menu-item">
+      <h3>Pizza Warzywna</h3>
+      <p>Wegetariańska pizza z papryką, cebulą, oliwkami i świeżymi pomidorami.</p>
+      <div class="price">28 zł</div>
+    </div>
+    <div class="menu-item">
+      <h3>Pizza Capricciosa</h3>
+      <p>Z pieczarkami, szynką, karczochami i serem mozzarella.</p>
+      <div class="price">32 zł</div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="btn" onclick="window.location.href='tel:+48500500500'">Zadzwoń do nas</button>
+    <button class="btn" onclick="window.open('https://pizzeria-xyz-zamow.online', '_blank')">Zamów online</button>
+  </div>
+
+  <section class="about" id="about">
+    <h2>O nas</h2>
+    <p>Jesteśmy rodzinną pizzerią z sercem do pizzy! Nasze ciasto jest zawsze świeże, składniki najwyższej jakości, a atmosfera przyjazna i domowa. Zapraszamy do odwiedzin lub zamówienia online!</p>
+  </section>
+
+  <section id="kontakt">
+    <h2 class="section-title">Kontakt i Lokalizacja</h2>
+    <p>Adres: Generała Augusta Emila Fieldorfa 2, Gdańsk</p>
+    <p>Telefon: <a href="tel:+48500500500" style="color:#ffb300;">500 500 500</a></p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.123456789!2d18.635!3d54.354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd74f7aab2c4b7%3A0x1234567890abcdef!2sGenerała+Augusta+Emila+Fieldorfa+2%2C+Gdańsk!5e0!3m2!1spl!2spl!4v1691732200000!5m2!1spl!2spl"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2025 Pizzeria Gdańsk - Najlepsza pizza w mieście
+</footer>
+
 </body>
 </html>
