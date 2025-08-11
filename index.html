@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzeria Bella Napoli</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0; padding: 0;
+      background: #fff8f0;
+      color: #333;
+    }
+    header {
+      background: #d1321b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .menu-item {
+      border-bottom: 1px solid #d1321b;
+      padding: 10px 0;
+    }
+    footer {
+      text-align: center;
+      background: #d1321b;
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+    @media(max-width:600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pizzeria Bella Napoli</h1>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">O nas</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+  <main>
+    <section id="menu">
+      <h2>Nasze Menu</h2>
+      <div class="menu-item">
+        <h3>Margherita</h3>
+        <p>Klasyczna pizza z sosem pomidorowym, mozzarellą i bazylią.</p>
+      </div>
+      <div class="menu-item">
+        <h3>Capricciosa</h3>
+        <p>Sos pomidorowy, mozzarella, szynka, pieczarki, oliwki.</p>
+      </div>
+      <div class="menu-item">
+        <h3>Diavola</h3>
+        <p>Pikantna salami, ser mozzarella, ostra papryka.</p>
+      </div>
+    </section>
+    <section id="about">
+      <h2>O nas</h2>
+      <p>Jesteśmy rodzinną pizzerią z tradycjami, serwującą najlepsze włoskie pizze w Kołobrzegu od 1998 roku.</p>
+    </section>
+    <section id="contact">
+      <h2>Kontakt</h2>
+      <p>Telefon: 123-456-789</p>
+      <p>Email: kontakt@bellanapoli.pl</p>
+      <p>Adres: ul. Smaczna 12, Kołobrzeg</p>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Pizzeria Bella Napoli
+  </footer>
+</body>
+</html>
